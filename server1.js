@@ -21,6 +21,7 @@ const bodyParser=require('body-parser')
 const passport=require('./auth');
 //require('./auth')
 require('dotenv').config();
+const PORT=process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 //Middleware function
@@ -41,7 +42,7 @@ const personRoutes=require('./routes/personRoutes');
 //use the router
 app.use('/person',personRoutes);
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.log('Server is running on http://localhost:3000')
 })
 
